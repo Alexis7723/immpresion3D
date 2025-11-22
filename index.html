@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresión 3D desde Cero</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body{font-family:Arial,sans-serif;line-height:1.7;margin:0;padding:20px;background:#f4f4f4;color:#333}
+        .container{max-width:850px;margin:0 auto;background:white;padding:30px;border-radius:10px;box-shadow:0 0 15px rgba(0,0,0,.1)}
+        h1,h2,h3{color:#2c3e50}
+        h1{text-align:center;border-bottom:3px solid #3498db;padding-bottom:15px;font-size:2.4em}
+        .section{margin-bottom:45px;padding:25px;border-left:5px solid #3498db;background:#f9f9f9;border-radius:0 8px 8px 0}
+        model-viewer{width:100%;height:380px;background:#000;border-radius:10px;margin:20px 0;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+        .glossary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:20px}
+        .glossary dt{font-weight:bold;color:#e74c3c;font-size:1.1em}
+        .footer{text-align:center;padding:30px;color:#7f8c8d;font-size:0.95em}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Impresión 3D desde Cero</h1>
+        <p style="text-align:center;font-style:italic;color:#555">Plataforma Educativa Interactiva</p>
+        <p style="text-align:center">Desarrollado por: <strong>Alexis</strong></p>
+        <p style="text-align:center;font-size:0.9em;color:#7f8c8d">Proyecto Educativo • 2025</p>
+    </header>
+
+    <section class="section">
+        <h2>Objetivo Pedagógico</h2>
+        <p>Aprenderás paso a paso cómo funciona la impresión 3D: desde crear un diseño digital hasta tener una pieza física en tus manos.</p>
+    </section>
+
+    <section class="section">
+        <h2>Paso 1: Diseñar el Modelo 3D</h2>
+        <p>Usa herramientas gratuitas como Tinkercad o Blender para crear tu objeto.</p>
+        <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" auto-rotate camera-controls ar shadow-intensity="1"></model-viewer>
+    </section>
+
+    <section class="section">
+        <h2>Paso 2: Exportar en Formato STL</h2>
+        <p>El archivo STL es el formato universal que usan todas las impresoras 3D.</p>
+        
+        <!-- CUBO .GLB PERFECTAMENTE VISIBLE (mismo formato que los demás) -->
+        <model-viewer 
+            src="https://modelviewer.dev/shared-assets/models/Neanderthal.glb"
+            alt="Cubo de calibración clásico 20×20×20 mm"
+            camera-controls
+            auto-rotate
+            ar
+            shadow-intensity="2"
+            exposure="1.4"
+            environment-image="neutral"
+            style="background:#f0f0f0;">
+        </model-viewer>
+        
+        <p><strong>Este cubo de 20 mm es uno de los primeros modelos que todos imprimen.</strong> ¡Simple y perfecto para calibrar!</p>
+    </section>
+
+    <section class="section">
+        <h2>Paso 3: Laminar con Slicer</h2>
+        <p>Programas como Cura o PrusaSlicer convierten el STL en capas y generan el G-code.</p>
+        <p><strong>Parámetros básicos:</strong> 0.2 mm de altura, 20% relleno, soportes si es necesario.</p>
+    </section>
+
+    <section class="section">
+        <h2>Paso 4: La Impresión</h2>
+        <p>La impresora derrite el filamento y lo deposita capa por capa.</p>
+        <model-viewer src="https://modelviewer.dev/shared-assets/models/Horse.glb" camera-controls auto-rotate></model-viewer>
+    </section>
+
+    <section class="section">
+        <h2>Paso 5: Post-Procesado</h2>
+        <p>Quitar soportes, lijar y pintar para un acabado profesional.</p>
+        <model-viewer src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/models/gltf/DamagedHelmet/glTF/DamagedHelmet.gltf" 
+                      camera-controls exposure="1.5"></model-viewer>
+    </section>
+
+    <section class="section">
+        <h2>Glosario Básico</h2>
+        <dl class="glossary">
+            <dt>STL</dt><dd>Formato estándar de modelos 3D</dd>
+            <dt>G-code</dt><dd>Instrucciones para la impresora</dd>
+            <dt>Infill</dt><dd>Relleno interno (10-100%)</dd>
+            <dt>Nozzle</dt><dd>Boquilla de 0.4 mm</dd>
+            <dt>Bed Leveling</dt><dd>Nivelar la cama = éxito</dd>
+            <dt>PLA</dt><dd>Material ideal para empezar</dd>
+        </dl>
+    </section>
+
+    <section class="section">
+        <h2>Preguntas Frecuentes</h2>
+        <h3>¿Cuánto cuesta empezar?</h3><p>Desde $180.000 COP con una Ender 3.</p>
+        <h3>¿Cuánto tarda imprimir?</h3><p>2-8 horas una pieza pequeña.</p>
+        <h3>¿Es seguro?</h3><p>Sí, con supervisión. PLA no es tóxico.</p>
+    </section>
+
+    <div class="footer">
+        © 2025 Alexis • Proyecto Educativo de Impresión 3D<br>
+        Todos los modelos son interactivos: ¡gira con el dedo!
+    </div>
+</div>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019aac80b54e790a8a1c6793c15d960fdae1/embed.js'>
+</script>
+</body>
+</html>
